@@ -1,0 +1,18 @@
+<div class="input">
+  <label *ngIf="label" [attr.for]="name" [ngClass]="{'input__label--required': required}" class="input__label">
+    {{label}}
+  </label>
+  <div class="input__holder">
+    <input type="{{type}}"
+           [ngModel]="value"
+           (ngModelChange)="onChangeValue($event)"
+           [attr.maxlength]="maxlength"
+           placeholder="{{placeholder}}"
+           [attr.id]="name"
+           (focus)="touched()"
+           class="input__element form-control"
+           [ngClass]="{'input__element--error': error,'input__element--disabled': disabled}"
+           [disabled]="disabled"/>
+    <div *ngIf="icon" class="input__icon {{icon}}" (click)="handleIconClick()"></div>
+  </div>
+</div>
