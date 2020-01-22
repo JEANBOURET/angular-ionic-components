@@ -1,15 +1,23 @@
 <div class="container">
+  <div class="row mt-2">
+    <div class="col">
+      <b>Input components</b>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-4 mt-2">
-      <b>Simple input component</b>
-      <jb-input [value]="'simple string'"
+    <div class="col-4">
+      <jb-input [value]=""
         [disabled]="false"
-        [placeholder]="'This is a placeholder'"
-        [label]="'Simple Label'">
+        [placeholder]="'Write here...'"
+        [label]="'Simple Input'">
       </jb-input>
+    </div>
+    <div class="col-4">
+      <jb-input-currency
+        [disabled]="false"
+        [placeholder]="'MXN$'"
+        [label]="'Simple Currency Input'">
+      </jb-input-currency>
     </div>
   </div>
 </div>
-
-
-<router-outlet></router-outlet>

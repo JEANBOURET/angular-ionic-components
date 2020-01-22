@@ -1,0 +1,16 @@
+<div class="input">
+  <label *ngIf="label" [attr.for]="name" [ngClass]="{'input__label--required': required}" class="input__label">
+    {{label}}
+  </label>
+  <div class="input__holder">
+    <input placeholder="{{placeholder}}"
+           class="input__element form-control"
+           currencyMask
+           [(ngModel)]="value"
+           [options]="currencyMaskOpts"
+           [attr.id]="name"
+           [ngClass]="{'input__element--error': error,'input__element--disabled': disabled}"
+           [disabled]="disabled"/>
+    <div *ngIf="icon" class="input__icon {{icon}}" (click)="handleIconClick()"></div>
+  </div>
+</div>
